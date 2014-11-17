@@ -307,7 +307,7 @@ int pcubature_v_buf(unsigned fdim, integrand_v f, void *fdata,
      double *val1 = NULL;
 
      if (fdim <= 1) norm = ERROR_INDIVIDUAL; /* norm is irrelevant */
-     if (norm < 0 || norm > ERROR_LINF) return FAILURE; /* invalid norm */
+     if (norm > ERROR_LINF) return FAILURE; /* invalid norm */
 
      if (fdim == 0) return SUCCESS; /* nothing to do */
      if (dim > MAXDIM) return FAILURE; /* unsupported */
